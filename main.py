@@ -17,28 +17,28 @@ for i in range(4):
 x = array([])
 y = array([])
 
-t = 0
-while t < 1:
+u = 0
+while u < 1:
     # FOR drawing straight line
-    # put_x = (1-t) * array_x[0] + t * array_x[1]
-    # put_y = (1 - t) * array_y[0] + t * array_y[1]
-    #
+    # put_x = (1-u) * array_x[0] + u * array_x[1]
+    # put_y = (1 - u) * array_y[0] + u * array_y[1]
+
     # Parabolic Arc
-    # put_x = pow(1 - t, 2) * array_x[0] + 2 * t * pow(1 - t, 1) * array_x[1] + pow(t, 2) * array_x[2]
-    # put_y = pow(1 - t, 2) * array_y[0] + 2 * t * pow(1 - t, 1) * array_y[1] + pow(t, 2) * array_y[2]
+    # put_x = pow(1 - u, 2) * array_x[0] + 2 * u * pow(1 - u, 1) * array_x[1] + pow(u, 2) * array_x[2]
+    # put_y = pow(1 - u, 2) * array_y[0] + 2 * u * pow(1 - u, 1) * array_y[1] + pow(u, 2) * array_y[2]
 
     # CUBIC CURVE
-    put_x = pow(1 - t, 3) * array_x[0] + 3 * t * pow(1 - t, 2) * array_x[1] + 3 * t * t * pow(1 - t, 1) * array_x[2]\
-            + pow(t, 3) * array_x[3]
-    put_y = pow(1 - t, 3) * array_y[0] + 3 * t * pow(1 - t, 2) * array_y[1] + 3 * t * t * pow(1 - t, 1) * array_y[2] \
-            + pow(t, 3) * array_y[3]
+    put_x = pow(1 - u, 3) * array_x[0] + 3 * u * pow(1 - u, 2) * array_x[1] + 3 * u * u * pow(1 - u, 1) * array_x[2]\
+            + pow(u, 3) * array_x[3]
+    put_y = pow(1 - u, 3) * array_y[0] + 3 * u * pow(1 - u, 2) * array_y[1] + 3 * u * u * pow(1 - u, 1) * array_y[2] \
+            + pow(u, 3) * array_y[3]
 
     x = append(x, put_x)
     y = append(y, put_y)
-    t += 0.01
+    u += 0.01
     # print(x)
 
-plt.title("CUBIC CURVE")
+plt.title("Cubic Bezier Curve")
 plt.plot(array_x, array_y, 'o')
 plt.plot(array_x, array_y, color='b', label='control point')
 plt.plot(x, y, color='g', label='curve')
